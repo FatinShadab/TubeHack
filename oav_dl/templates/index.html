@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}OAV Downloader{% endblock title %}
+
+{% block body %}
+        <!-- Masthead -->
+        <div class="masthead">
+            <div class="masthead-content text-white">
+                <div class="container-fluid px-4 px-lg-0">
+                    <h1 class="fst-italic lh-1 mb-4 ">OAV Downloader</h1>
+                    <p class="mb-5">Download any video from <strong>YOUTUBE</strong>, <strong>FACEBOOK</strong>, <strong>TWITTER</strong> and many more for free and safely by <strong>OAV downloader</strong>.</p>
+                    <form class="row g-3" action="/download_url" method="post">
+                        <div class="col-auto">
+                            <input type="text" class="form-control" name="url" placeholder="http://www.domin.com/vedio_info">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-3">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+{% endblock body %}
+

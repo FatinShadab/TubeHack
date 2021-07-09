@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}OAV-Error{% endblock title %}
+
+{% block body %}
+<div class="masthead">
+    <div class="masthead-content text-white">
+        <p> Invalid URL : Please enter a supported url and try again!</p>
+        <form class="row g-3" action="/home">
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Go Back</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock body %}
+
