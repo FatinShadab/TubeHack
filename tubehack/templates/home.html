@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}TubeHack{% endblock title %}
+
+{% block page_content %}
+    <!--Main Content-->
+    <div class="section p-4">
+        <div class="container">
+          <div class='d-sm-flex align-items-center justify-content-between'>
+              <div>
+                  <h1><b>Download</b><span class="text-shadow mx-2"><i class="text-danger bi bi-youtube mx-1"></i>Youtube Videos</span></h1>
+                  <p class="lead my-4">
+                    for free and enjoy them when ever you need with out internet with TubeHack
+                  </p>
+                  <form action="/download_url" method="post">
+                    <div class="mb-3">
+                      <div class="input-group mb-3">
+                        <span class="input-group-text fw-bold" id="basic-addon3">video url</span>
+                        <input type="text" class="form-control" name="url" aria-describedby="basic-addon3">
+                      </div>
+                    </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-outline-danger fw-bold"><i class="bi bi-arrow-down-circle mx-2"></i>Download</button>
+                    </div>
+                  </form>
+              </div>
+              <img class="img-fluid w-25 d-none d-sm-block" src="static/assets/imgs/undraw_download_re_li50.svg" alt="This is a img"/>
+          </div>
+        </div>
+      </div>
+{% endblock page_content %}
+

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}TubeHack-Error{% endblock title %}
+
+{% block page_content %}
+<div class="section pt-4">
+    <div class="container">
+      <div class='d-flex align-items-center justify-content-between'>
+          <img class="img-fluid w-25 d-none d-sm-block" src="static/assets/imgs/undraw_void_-3-ggu.svg" alt="This is a img"/>
+          <div class="fw-bold">
+              <p> URL ERROR : {{ given_url }} is not supported by <strong>TubeHack</strong> !</p>
+              <form class="mb-3" action="/home">
+                  <div class="text-end">
+                      <button type="submit" class="btn btn-danger mb-3"><i class="bi bi-arrow-left-short mx-2"></i>Go Back</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+    </div>
+  </div>
+{% endblock page_content %}
+
