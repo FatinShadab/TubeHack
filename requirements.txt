@@ -12,3 +12,4 @@ requests==2.25.1
 urllib3==1.26.6
 Werkzeug==2.0.1
 youtube-dl==2021.6.6
+pafy==0.5.5

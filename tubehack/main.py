@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 import sys
+import pafy
 import re
 import requests
 import youtube_dl
@@ -39,14 +40,20 @@ def download_video():
                         url = re.search('sd_src:"(.+?)"',html.text)[1]
                     return redirect(url)
                 else:
-                    ydl_opts = {'format':'best'}
-                    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-                        # dict of video information.
-                        info_dict = ydl.extract_info(given_url, download=False)
-                        # video url.
-                        video_url = info_dict.get('url', None)
-                        url = video_url
-                        return redirect(url)
+                    try:
+                        video = pafy.new(given_url)
+                        best = video.getbest()
+                        playurl = best.url
+                        return redirect(playurl)
+                    except:
+                        ydl_opts = {'format':'best'}
+                        with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+                            # dict of video information.
+                            info_dict = ydl.extract_info(given_url, download=False)
+                            # video url.
+                            video_url = info_dict.get('url', None)
+                            url = video_url
+                            return redirect(url)
         return render_template('error408.html')
     except:
         logging.exception('Failed download')
